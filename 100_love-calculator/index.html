@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Love Calculator</title>
+
+    <style>
+      * {
+        font-family: sans-serif;
+        text-align: center;
+      }
+
+      body {
+        margin-top: 144px;
+      }
+
+      .lovePercent {
+        margin-top: 40px;
+        font-weight: 800;
+        color: lightcoral;
+      }
+    </style>
+  </head>
+  <body>
+    <label for="boyName">Boy's Name</label>
+    <input type="text" name="boyName" id="boyName" />
+    <label for="girlName">Girl's Name</label>
+    <input type="text" name="girlName" id="girlName" />
+    <button class="submitBtn">Calculate</button>
+
+    <div class="lovePercent"></div>
+
+    <script>
+      const lovePercentEl = document.querySelector(".lovePercent");
+      const submitBtnEl = document.querySelector(".submitBtn");
+      submitBtnEl.addEventListener("click", () => {
+        lovePercentEl.textContent =
+          Math.floor(Math.random() * 101) + "% chance of getting in love!";
+      });
+    </script>
+  </body>
+</html>
