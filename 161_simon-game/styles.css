@@ -1,0 +1,54 @@
+body {
+  text-align: center;
+  background-color: #011f3f;
+  color: #eeeeee;
+}
+
+h1.title {
+  font-family: sans-serif;
+  font-size: 4rem;
+  text-transform: capitalize;
+  margin: 100px 0;
+}
+
+.btn-group {
+  display: inline-grid;
+  grid-template-columns: 200px 200px;
+  grid-template-rows: 200px 200px;
+  gap: 60px;
+}
+
+.btn {
+  height: 200px;
+  width: 200px;
+  border-radius: 50px;
+  border: 10px solid #000000;
+}
+
+.green {
+  background-color: green;
+}
+
+.red {
+  background-color: red;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.green:active,
+.red:active,
+.yellow:active,
+.blue:active {
+  background-color: white;
+  box-shadow: 0 0 16px white;
+}
+
+.cue {
+  opacity: 0.5;
+}
