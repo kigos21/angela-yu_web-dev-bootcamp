@@ -5,53 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sign up | Newsletter</title>
 
-    <style>
-      * {
-        box-sizing: border-box;
-      }
-
-      body {
-        padding-top: 100px;
-        font-family: sans-serif;
-        max-width: 420px;
-        margin: auto;
-        text-align: center;
-      }
-
-      input {
-        display: block;
-        margin-bottom: 6px;
-        width: 100%;
-        font-size: 1rem;
-        border-radius: 4px;
-        border-style: solid;
-      }
-
-      button {
-        width: 100%;
-        padding: 6px;
-        border: 0;
-        border-radius: 4px;
-      }
-
-      .img-fluid {
-        max-width: 120px;
-      }
-
-      .invert {
-        filter: invert(100%);
-      }
-
-      .text-muted {
-        opacity: 0.5;
-        font-size: 0.75rem;
-      }
-
-      .invert-btn {
-        width: fit-content;
-        margin-top: 400px;
-      }
-    </style>
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
     <img src="./images/logo.png" class="img-fluid newsletter" />
@@ -79,14 +33,19 @@
       const myImg = document.querySelector("img.newsletter");
       const invertBtn = document.querySelector(".invert-btn");
       invertBtn.addEventListener("click", () => {
-        // if (invertBtn.value === "0") {
-        //   myImg.classList.add("invert");
-        //   invertBtn.value = "1";
-        // } else {
-        //   myImg.classList.remove("invert");
-        //   invertBtn.value = "0";
-        // }
+        /* 
+       
+        if (invertBtn.value === "0") {
+          myImg.classList.add("invert");
+          invertBtn.value = "1";
+        } else {
+          myImg.classList.remove("invert");
+          invertBtn.value = "0";
+        }
+       
+        */
 
+        // this code does the same as the code block above
         myImg.classList.toggle("invert");
       });
     </script>

@@ -12,7 +12,13 @@ app.use(express.static("./public"));
 app.use(express.urlencoded({ extended: true }));
 
 app.listen(port, () => {
-  console.log(`Server started on http://localhost:${port}`);
+  console.log(`
+
+  ------------------------------------------
+  Server started on http://localhost:${port}
+  ------------------------------------------
+  
+  `);
 });
 
 app.get("/", (req, res) => {
@@ -32,21 +38,24 @@ app.post("/", (req, res) => {
   };
 
   async function run() {
-    const response = await mailchimp.lists.addListMember(listId, {
-      email_address: subscribingUser.email,
-      status: "subscribed",
-      merge_fields: {
-        FNAME: subscribingUser.firstName,
-        LNAME: subscribingUser.lastName,
-      },
-    });
+    try {
+      const response = await mailchimp.lists.addListMember(listId, {
+        email_address: subscribingUser.email,
+        status: "subscribed",
+        merge_fields: {
+          FNAME: subscribingUser.firstName,
+          LNAME: subscribingUser.lastName,
+        },
+      });
 
-    console.log(
-      `Successfully added contact as an audience member. The contact's id is ${response.id}.`
-    );
+      res.sendFile(__dirname + "/success.html");
+    } catch (error) {
+      console.log(error.response.statusCode);
+      console.log(error.response.body);
+
+      res.sendFile(__dirname + "/failure.html");
+    }
   }
 
   run();
-
-  res.send("Success!");
 });
