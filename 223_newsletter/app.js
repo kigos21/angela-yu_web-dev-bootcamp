@@ -11,7 +11,7 @@ mailchimp.setConfig({
 app.use(express.static("./public"));
 app.use(express.urlencoded({ extended: true }));
 
-app.listen(port, () => {
+app.listen(process.env.PORT || port, () => {
   console.log(`
 
   ------------------------------------------
