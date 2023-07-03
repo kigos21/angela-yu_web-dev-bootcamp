@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("../partials/head") %>
+  </head>
+  <body class="container">
+    <h1>Welcome back, <%= username %></h1>
+    <% tasks.forEach( task => { %>
+    <div class="task-item">
+      <input type="checkbox" /><span><%= task %></span>
+    </div>
+    <%} ); %>
+    <form action="/home" method="post">
+      <input
+        type="text"
+        class="textfield"
+        name="newTask"
+        placeholder="Your task"
+      />
+      <input type="hidden" name="username" value="<%= username %>" />
+      <button type="submit" class="btn">Add</button>
+    </form>
+    <p><a href="/logout">Logout</a></p>
+  </body>
+</html>

@@ -1,0 +1,45 @@
+* {
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.container {
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+form > * {
+  height: 32px;
+  text-align: center;
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  margin: 4px 0;
+}
+
+.textfield {
+  display: block;
+  width: 100%;
+  margin: 4px 0;
+}
+
+.text-muted {
+  opacity: 0.5;
+}
+
+.error {
+  text-align: center;
+  background-color: #ffe0e0;
+  border: 1px solid #ff6060;
+  border-radius: 3px;
+  font-size: 0.8rem;
+  margin: 8px 0;
+
+  color: #555555;
+}
+
+.task-item:last-of-type {
+  margin-bottom: 32px;
+}

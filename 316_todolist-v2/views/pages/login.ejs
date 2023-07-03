@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("../partials/head") %>
+  </head>
+  <body class="container">
+    <h1>Welcome back!</h1>
+    <p>Please login to your account</p>
+
+    <form action="/login" method="post">
+      <input
+        type="text"
+        name="username"
+        class="textfield"
+        placeholder="Username"
+      />
+      <input
+        type="password"
+        name="password"
+        class="textfield"
+        placeholder="Password"
+      />
+      <button type="submit" class="btn">Login</button>
+    </form>
+    <% if (locals.error) { %>
+    <div class="error">Error: <%= error %></div>
+    <% } %>
+    <p style="font-size: 0.75rem">No account? <a href="/signup">Sign up</a></p>
+  </body>
+</html>

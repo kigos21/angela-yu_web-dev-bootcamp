@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("../partials/head") %>
+  </head>
+
+  <body class="container">
+    <h1>Sign up to Taskly</h1>
+    <p>Track tasks down</p>
+
+    <form action="/signup" method="post">
+      <input
+        type="text"
+        name="username"
+        class="textfield"
+        placeholder="Username"
+      />
+      <input
+        type="password"
+        name="password"
+        class="textfield"
+        placeholder="Password"
+      />
+      <button type="submit" class="btn">Sign up</button>
+    </form>
+    <p style="font-size: 0.75rem">
+      Already signed up? <a href="/login">Login</a>
+    </p>
+  </body>
+</html>
