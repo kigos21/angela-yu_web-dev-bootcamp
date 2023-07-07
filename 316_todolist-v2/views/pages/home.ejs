@@ -5,19 +5,36 @@
   </head>
   <body class="container">
     <h1>Welcome back, <%= username %></h1>
+
     <% tasks.forEach( task => { %>
     <div class="task-item">
-      <input type="checkbox" /><span><%= task %></span>
+      <input type="checkbox" />
+      <div>
+        <h6><%= task.title %></h6>
+        <p><%= task.details %></p>
+      </div>
+      <form action="/home/delete" method="post">
+        <input type="hidden" name="taskId" value="<%= task._id %>" />
+        <button type="submit" class="delete-btn">x</button>
+      </form>
     </div>
     <%} ); %>
+
     <form action="/home" method="post">
       <input
         type="text"
         class="textfield"
-        name="newTask"
-        placeholder="Your task"
+        name="taskTitle"
+        placeholder="Title"
+        required
       />
-      <input type="hidden" name="username" value="<%= username %>" />
+      <textarea
+        type="text"
+        class="textfield"
+        name="taskDetails"
+        placeholder="Details"
+        rows="5"
+      ></textarea>
       <button type="submit" class="btn">Add</button>
     </form>
     <p><a href="/logout">Logout</a></p>
