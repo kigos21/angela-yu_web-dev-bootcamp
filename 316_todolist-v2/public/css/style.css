@@ -23,6 +23,8 @@ form > * {
   display: block;
   width: 100%;
   margin: 4px 0;
+  font-size: 0.8rem;
+  resize: vertical;
 }
 
 .text-muted {
@@ -40,6 +42,27 @@ form > * {
   color: #555555;
 }
 
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+}
+
+.task-item > div {
+  flex-grow: 1;
+}
+
+.task-item * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .task-item:last-of-type {
   margin-bottom: 32px;
+}
+
+.delete-btn {
+  aspect-ratio: 1 / 1;
 }
