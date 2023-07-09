@@ -1,0 +1,53 @@
+<%- include("header") -%>
+
+<div class="box" id="heading">
+  <h1><%= day %></h1>
+</div>
+
+<div class="box">
+  <% list.forEach((item) => { %>
+  <div class="item">
+    <form action="/delete" method="post">
+      <% if (typeof(listName) !== "undefined") { %>
+      <input type="hidden" name="listName" value="<%= listName %>" />
+      <% } %>
+      <input
+        type="checkbox"
+        onChange="this.form.submit()"
+        name="itemId"
+        value="<%= item._id %>"
+      />
+    </form>
+    <p><%= item.name %></p>
+  </div>
+  <% }); %>
+
+  <!-- if listName, route to listName -->
+  <% if (typeof(listName) !== "undefined") { %>
+  <form class="item" action="/<%= listName %>" method="post">
+    <input
+      type="text"
+      name="newItem"
+      placeholder="New Item"
+      autocomplete="off"
+    />
+    <button type="submit" name="listName" value="<%= listName %>">+</button>
+  </form>
+  <p style="text-align: center; font-size: 0.75rem">
+    <%= listName %> to-do list
+  </p>
+
+  <% } else { %>
+  <form class="item" action="/" method="post">
+    <input
+      type="text"
+      name="newItem"
+      placeholder="New Item"
+      autocomplete="off"
+    />
+    <button type="submit">+</button>
+  </form>
+  <% } %>
+</div>
+
+<%- include("footer") -%>
