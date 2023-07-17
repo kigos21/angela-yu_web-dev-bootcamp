@@ -1,0 +1,40 @@
+* {
+  font-family: sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+section {
+  padding: 1rem;
+}
+
+.filter-menu {
+  text-align: center;
+  background-color: #f4f4f4;
+}
+
+.search-box {
+  font-size: 1rem;
+  width: 227px;
+  margin-bottom: 0.4rem;
+}
+
+.separator {
+  border-top: #e0e0e0 solid 1px;
+}
+
+.product-table {
+  width: 100%;
+  text-align: center;
+}
+
+.product-table * {
+  padding: 0.4rem 0.8rem;
+  /* border: #000000 solid 1px; */
+}
+
+.no-stock {
+  color: red;
+}
